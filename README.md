@@ -3,13 +3,14 @@
 ## RoadMap
 - HomePage
   - Filter
-    - [ ] See All Posts
+    - [x] See All Posts
     - [ ] See Following Posts
     - [ ] Change in URL
     - [ ] Save on localHost the option
   - Feed
     - [ ] New Post
-    - [ ] List posts
+    - [x] List posts
+    - [x] List quotes and reposts
     - [ ] Quote, Repost
 - ProfilePage
   - All of them
@@ -29,7 +30,7 @@
     - [ ] Give the option to follow/unfollow
 - Posts
   - [ ] User can just post 5 a day
-  - [ ] Text only
+  - [x] Text only
   - [ ] 777 char max
   - [ ] Show how many chars are left
 

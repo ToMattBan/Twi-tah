@@ -47,9 +47,10 @@ export default async (req, res) => {
       originalUser: 'Tauranga',
       originalTime: new Date('March 15, 2022'),
       quote: 'I fully agree with this all',
-    }, {
-      userName: "Van der Sluis",
-      profilePic: "https://randomuser.me/api/portraits/women/1.jpg",
+    },
+    {
+      userName: "Tauranga",
+      profilePic: "https://randomuser.me/api/portraits/women/18.jpg",
       userId: 4186453486,
       timePosted: new Date('March 20, 2021'),
       typePost: "1",
@@ -59,8 +60,8 @@ export default async (req, res) => {
       quote: null,
     },
     {
-      userName: "Mademoiselle",
-      profilePic: "https://randomuser.me/api/portraits/women/15.jpg",
+      userName: "Gabin",
+      profilePic: "https://randomuser.me/api/portraits/men/13.jpg",
       userId: 1672746848,
       timePosted: new Date('March 23, 2021'),
       typePost: "2",
@@ -70,8 +71,8 @@ export default async (req, res) => {
       quote: null,
     },
     {
-      userName: "Poitiers",
-      profilePic: "https://randomuser.me/api/portraits/men/8.jpg",
+      userName: "King Dunedin",
+      profilePic: "https://randomuser.me/api/portraits/men/6.jpg",
       userId: 8464268426,
       timePosted: new Date('March 21, 2021'),
       typePost: "3",
