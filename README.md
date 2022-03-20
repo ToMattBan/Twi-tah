@@ -10,7 +10,7 @@
   - Feed
     - [ ] New Post
     - [ ] List posts
-    - [ ] Like, Quote, Repost
+    - [ ] Quote, Repost
 - ProfilePage
   - All of them
     - [ ] Modal over HomePage
@@ -29,6 +29,7 @@
     - [ ] Give the option to follow/unfollow
 - Posts
   - [ ] User can just post 5 a day
+  - [ ] Text only
   - [ ] 777 char max
   - [ ] Show how many chars are left
 
@@ -37,3 +38,7 @@
 - Install the dependencies with `npm install`
 - Run with `npm run dev`
 - Open [http://localhost:3000](http://localhost:3000) 
+
+## Credits
+- Icons from [SVGRepo](www.svgrepo.com/vectors)
+- Users data from [RandomUser](randomuser.me)
