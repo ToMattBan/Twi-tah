@@ -21,30 +21,6 @@ $wrapperMaxWidth: 1360px !default;
   max-width: $wrapperMaxWidth;
 }
 
-/* Modifiers
- * ========================================================================= */
-
-@mixin wrapperModifiers($breakpoint: null) {
-  /* Flush
-   * --------------------------- */
-
-  .o-wrapper--flush#{$breakpoint} {
-    max-width: none;
-  }
-
-  /* Size Variants
-   * --------------------------- */
-
-  @each $spacingName, $spacingFactor in $globalSpacingFactors {
-    .o-wrapper--#{$spacingName}#{$breakpoint} {
-      padding-right: (($globalSpacing * $spacingFactor) / 2);
-      padding-left: (($globalSpacing * $spacingFactor) / 2);
-    }
-  }
-}
-
-@include wrapperModifiers();
-
 /* =========================================================================
  * WRAPPER OBJECT MEDIA QUERIES
  * ========================================================================= */
@@ -73,3 +49,27 @@ $customWrapperSpacing: (
 }
 
 @include customWrapperSpacing();
+
+/* Modifiers
+ * ========================================================================= */
+
+ @mixin wrapperModifiers($breakpoint: null) {
+  /* Flush
+   * --------------------------- */
+
+  .o-wrapper--flush#{$breakpoint} {
+    max-width: none;
+  }
+
+  /* Size Variants
+   * --------------------------- */
+
+  @each $spacingName, $spacingFactor in $globalSpacingFactors {
+    .o-wrapper--#{$spacingName}#{$breakpoint} {
+      padding-right: (($globalSpacing * $spacingFactor) / 2);
+      padding-left: (($globalSpacing * $spacingFactor) / 2);
+    }
+  }
+}
+
+@include wrapperModifiers();
