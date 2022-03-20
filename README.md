@@ -4,8 +4,9 @@
 - HomePage
   - Filter
     - [x] See All Posts
-    - [ ] See Following Posts
-    - [ ] Change in URL
+    - [x] See Following Posts
+    - [x] Change in URL
+    - [ ] Change in the page
     - [ ] Save on localHost the option
   - Feed
     - [ ] New Post
@@ -39,6 +40,11 @@
 - Install the dependencies with `npm install`
 - Run with `npm run dev`
 - Open [http://localhost:3000](http://localhost:3000) 
+
+## How filter
+- http://localhost:3000/homepage?posts=following Will show just who you follow
+- http://localhost:3000/homepage?posts=all Will show every post
+- Anything else will show every post and correct the url
 
 ## Credits
 - Icons from [SVGRepo](www.svgrepo.com/vectors)

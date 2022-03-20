@@ -1,20 +1,40 @@
 import Head from "next/head"
+import { useRouter } from "next/router"
 import { useEffect, useState } from "react/cjs/react.development"
 import Post from "../components/posts"
 
 export default function Home() {
+  const router = useRouter();
+
   const [posts, setPosts] = useState([])
   const [isLoading, setLoading] = useState(false)
+  var urlPosts = "api/feed/"
 
   useEffect(() => {
+    var filterParam = new URLSearchParams(window.location.search);
+        filterParam = filterParam.get('posts');
+    
+    if (filterParam != 'all' && filterParam != 'following') {
+      filterParam = 'all';
+
+      router.push({
+        query: { posts: 'all' }
+      }, 
+      undefined, { shallow: true }
+      )
+    } 
+
+    console.log(urlPosts + filterParam)
+
     setLoading(true)
-    fetch("api/feed/all")
+    fetch(urlPosts + filterParam)
       .then((res) => res.json())
       .then((posts) => {
         setPosts(posts)
         setLoading(false)
       })
   }, [])
+
 
   if (isLoading) return <p>Loading...</p>
   if (!posts) return <p>No posts today =(</p>
