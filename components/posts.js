@@ -35,7 +35,7 @@ export default function Post(props) {
   const { userName, profilePic, userId, timePosted, typePost, originalPost, originalUser, originalTime, quote } = props.post;
 
   return (
-    <div className="post o-layout _fz14 _mvxs _pvxs _bdlightGray _bdrs4">
+    <section className="post o-layout _fz14 _mvxs _pvxs _bdlightGray _bdrs4">
       <div className="o-layout__item _por _df _aic">
         <span className="_3/12">
           <Image src={profilePic} className="_bdrs50p" width="100%" height="100%" alt={`${userName} avatar`} />
@@ -53,6 +53,6 @@ export default function Post(props) {
         <Image src={repostIcon} width="100%" className="_cp" />
         <Image src={quoteIcon} width="100%" className="_cp" />
       </div>
-    </div>
+    </section>
   )
 }

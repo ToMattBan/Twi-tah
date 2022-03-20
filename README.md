@@ -6,7 +6,7 @@
     - [x] See All Posts
     - [x] See Following Posts
     - [x] Change in URL
-    - [ ] Change in the page
+    - [x] Change in the page
     - [ ] Save on localHost the option
   - Feed
     - [ ] New Post
@@ -31,7 +31,7 @@
     - [ ] Give the option to follow/unfollow
 - Posts
   - [ ] User can just post 5 a day
-  - [x] Text only
+  - [ ] Text only
   - [ ] 777 char max
   - [ ] Show how many chars are left
 
