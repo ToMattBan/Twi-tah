@@ -11,8 +11,28 @@ function DatePosted({ stringDate, className }) {
   )
 }
 
+function UserPost({ typePost, originalPost, originalUser, originalTime, quote }) {
+  if (typePost == 1)
+    return (<> {originalPost} </>)
+  else {
+    return (
+      <>
+        {typePost == 2 ? '' : quote}
+        <div className="_bdlightGray _bdrs4 _mtxxs _pxxs">
+          <div> {originalPost} </div>
+
+          <div className="_fz12 _mtxxs">
+            <div>Originally posted by {originalUser}</div>
+            <DatePosted stringDate={originalTime} />
+          </div>
+        </div>
+      </>
+    )
+  }
+}
+
 export default function Post(props) {
-  const { userName, profilePic, userId, timePosted, typePost, originalPost, quote } = props.post;
+  const { userName, profilePic, userId, timePosted, typePost, originalPost, originalUser, originalTime, quote } = props.post;
 
   return (
     <div className="post o-layout _fz14 _mvxs _pvxs _bdlightGray _bdrs4">
@@ -22,20 +42,16 @@ export default function Post(props) {
         </span>
         <div className="_mlxs">
           <span className="_mrxxs _fw7">{userName}</span>
-
-          <DatePosted stringDate={timePosted} className="_1/1 _db"/>
+          <DatePosted stringDate={timePosted} className="_1/1 _db" />
         </div>
       </div>
       <div className="o-layout__item _taj">
-        <div className="_dn">
-          <span className="_mrxxs _fw7">{userName}</span>
-          <DatePosted stringDate={timePosted} />
-        </div>
-        <div>{originalPost}</div>
+        <UserPost typePost={typePost} originalPost={originalPost}
+          originalUser={originalUser} originalTime={originalTime} quote={quote} />
       </div>
       <div className="o-layout__item _df _jcsa _mtxs">
-        <Image src={repostIcon} width="100%" className="_cps"/>
-        <Image src={quoteIcon} width="100%" className="_cps"/>
+        <Image src={repostIcon} width="100%" className="_cp" />
+        <Image src={quoteIcon} width="100%" className="_cp" />
       </div>
     </div>
   )

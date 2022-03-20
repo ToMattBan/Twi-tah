@@ -28,12 +28,11 @@ export default function Home() {
       </Head>
 
       <main className="o-wrapper o-wrapper--xl">
-        <header>Posterr</header>
         <h2>Aqui vamos fazer o quadrinho de new Post</h2>
         {
           posts.map(post => {
             return (
-              <Post post={post} key={Math.random().toString()}/>
+              <Post post={post} key={Math.random().toString()} />
             )
           })
         }
