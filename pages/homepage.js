@@ -1,7 +1,12 @@
 import Head from "next/head"
 import { useRouter } from "next/router"
+import Modal from "react-modal";
 import { useEffect, useState } from "react/cjs/react.development"
+import Header from "../components/header";
 import Post from "../components/posts"
+import User from "../components/userpage";
+
+Modal.setAppElement('#__next');
 
 export default function Home() {
   const router = useRouter();
@@ -53,9 +58,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <header className="_pot _t0 _bgsecondary _pxs _df _jcsb _z100 _elevation16">
-        <div>Posterr</div>
-      </header>
+      <Header />
 
       <main className="o-wrapper o-wrapper--xl">
 
@@ -76,12 +79,16 @@ export default function Home() {
           {
             posts.map(post => {
               return (
-                <Post post={post} key={Math.random().toString()} />
+                <Post post={post} key={post} />
               )
             })
           }
         </article>
       </main>
+
+      <Modal isOpen={!!router.query.userId} onRequestClose={() => router.push('/homepage')}>
+        <User userId={router.query.userId} />
+      </Modal>
     </div>
   )
 }

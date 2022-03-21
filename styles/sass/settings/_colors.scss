@@ -8,6 +8,7 @@ $_colorCache: (
   "hardBlue": #7281a0,
   "blue": #6e7d9d,
   "yellow": #ffe000,
+  "red": rgb(255, 0, 0),
 );
 
 $colors: (
@@ -16,6 +17,7 @@ $colors: (
   "hardBlue": map_get($_colorCache, "hardBlue"),
   "blue": map_get($_colorCache, "blue"),
   "yellow": map_get($_colorCache, "yellow"),
+  "red": map_get($_colorCache, "red"),
   "textGray": #555555,
   "mediumGray": #707070,
   "strokeGray": #d8d8d8,

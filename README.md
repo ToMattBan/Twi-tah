@@ -15,8 +15,8 @@
     - [ ] Quote, Repost
 - ProfilePage
   - All of them
-    - [ ] Modal over HomePage
-    - [ ] Change URL
+    - [x] Modal over HomePage
+    - [x] Change URL
     - Data to Show
       - [ ] Username (Alphanumeric 14char max)
       - [ ] Date Joined (March 25, 2021)
@@ -49,3 +49,6 @@
 ## Credits
 - Icons from [SVGRepo](www.svgrepo.com/vectors)
 - Users data from [RandomUser](randomuser.me)
+
+## Coments
+- On the homepage I tryied to use SWR, but the data take too long to be received, So I changed it and used a simple fetch instead.

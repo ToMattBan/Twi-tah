@@ -1,0 +1,7 @@
+.ReactModal__Overlay--after-open {
+    z-index: 2;
+
+    .ReactModal__Content--after-open {
+        background-color: getColor("secondary") !important;
+    }
+}
