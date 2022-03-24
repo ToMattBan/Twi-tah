@@ -1,6 +1,6 @@
 import { useRouter } from "next/router"
 import Header from "../../components/header";
-import User from "../../components/userpage";
+import User from "../../components/user";
 
 export default function Userpage() {
   const router = useRouter();

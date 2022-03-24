@@ -1,9 +1,9 @@
 import Image from "next/image";
 import { useEffect, useState } from "react/cjs/react.development";
-import DateFormated from "../dateFormated";
-import Post from "../posts";
+import DateFormated from "./dateFormated";
+import Post from "./posts";
 
-import profilePlaceholder from "../../public/favicon.ico"
+import profilePlaceholder from "../public/favicon.ico"
 
 export default function User({ userId, isModal }) {
   const [userInfo, setUserInfo] = useState({});
@@ -12,6 +12,8 @@ export default function User({ userId, isModal }) {
   const [isFollowing, setIsFollowing] = useState(false);
 
   useEffect(() => {
+    if (!userId) userId = window.location.pathname.match(/\d.*/g)[0];
+
     fetch("/api/users/" + userId)
       .then((res) => res.json())
       .then((userInfo) => {
@@ -35,7 +37,7 @@ export default function User({ userId, isModal }) {
         <section className="o-layout__item _9/12 _tac">
           <div className="_df _jcsa _aic">
             <span className="_fw7">{userInfo.userName}</span>
-            <button onClick={toggleFollow} className="c-btn--primary c-btn--inverted _bd0 _bdrs4 _fz14 _phxs" style={{paddingTop: '3px', paddingBottom: "3px"}}>
+            <button onClick={toggleFollow} className="c-btn--primary c-btn--inverted _bd0 _bdrs4 _fz14 _phxs" style={{ paddingTop: '3px', paddingBottom: "3px" }}>
               {isFollowing ? "Following" : "Follow"}
             </button>
           </div>
@@ -61,7 +63,7 @@ export default function User({ userId, isModal }) {
         </section>
       </article>
 
-      <article className="_mtxl o-wrapper">
+      <article className="_mtxl">
         {
           posts.map((post, index) => {
             return (

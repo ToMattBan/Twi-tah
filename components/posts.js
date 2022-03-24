@@ -31,7 +31,7 @@ export default function Post(props) {
   const { userName, profilePic, userId, timePosted, typePost, originalPost, originalUser, originalTime, quote } = props.post;
 
   return (
-    <section className="post o-layout _fz14 _mvxs _pvxs _bdlightGray _bdrs4">
+    <section className="post o-layout _m0 _fz14 _mvxs _pvxs _bdlightGray _bdrs4">
       <div className="o-layout__item _por _df _aic">
         <span className="_3/12">
           <Link href={`/homepage/?userId=${userId}`} as={`/userpage/${userId}`}>

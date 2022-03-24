@@ -4,7 +4,7 @@ import Modal from "react-modal";
 import { useEffect, useState } from "react/cjs/react.development"
 import Header from "../components/header";
 import Post from "../components/posts"
-import User from "../components/userpage";
+import User from "../components/user";
 
 Modal.setAppElement('#__next');
 
@@ -87,7 +87,7 @@ export default function Home() {
       </main>
 
       <Modal isOpen={!!router.query.userId} onRequestClose={() => router.push('/homepage')}>
-        <User userId={router.query.userId} isModal={true} />
+      <User userId={router.query.userId} isModal={true} />
       </Modal>
     </div>
   )
