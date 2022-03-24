@@ -9,7 +9,7 @@
     - [x] Change in the page
     - [ ] Save on localHost the option
   - Feed
-    - [ ] New Post
+    - [x] New Post
     - [x] List posts
     - [x] List quotes and reposts
     - [ ] Quote, Repost
@@ -31,9 +31,10 @@
     - [x] Give the option to follow/unfollow
 - Posts
   - [ ] User can just post 5 a day
-  - [ ] Text only
-  - [ ] 777 char max
-  - [ ] Show how many chars are left
+  - [x] Text only
+  - [x] 777 char max
+  - [x] Show how many chars are left
+  - [x] Auto resize the input
 
 
 ## How to run

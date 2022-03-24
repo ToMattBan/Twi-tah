@@ -3,6 +3,7 @@ import { useRouter } from "next/router"
 import Modal from "react-modal";
 import { useEffect, useState } from "react/cjs/react.development"
 import Header from "../components/header";
+import NewPostBox from "../components/NewPostBox";
 import Post from "../components/posts"
 import User from "../components/user";
 
@@ -50,6 +51,10 @@ export default function Home() {
       })
   }
 
+  function newPost(post) {
+    setPosts([post, ...posts]);
+  }
+
   return (
     <div>
       <Head>
@@ -60,9 +65,9 @@ export default function Home() {
 
       <Header />
 
-      <main className="o-wrapper o-wrapper--xl">
+      <main className="o-wrapper">
 
-        <h2>Aqui vamos fazer o quadrinho de new Post</h2>
+        <NewPostBox onNewPost={newPost} />
 
         <div className="_df _aic _jce _fz12">
           <span>All</span>
@@ -87,7 +92,7 @@ export default function Home() {
       </main>
 
       <Modal isOpen={!!router.query.userId} onRequestClose={() => router.push('/homepage')}>
-      <User userId={router.query.userId} isModal={true} />
+        <User userId={router.query.userId} isModal={true} />
       </Modal>
     </div>
   )
