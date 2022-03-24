@@ -4,15 +4,7 @@ import { useRouter } from "next/router";
 
 import repostIcon from "../public/repost.svg"
 import quoteIcon from "../public/quote.svg"
-
-function DatePosted({ stringDate, className }) {
-  stringDate = new Date(stringDate);
-  stringDate = stringDate.toLocaleDateString('en-us', { year: "numeric", month: "long", day: "numeric" })
-
-  return (
-    <span className={className}>{stringDate}</span>
-  )
-}
+import DateFormated from "./dateFormated";
 
 function UserPost({ typePost, originalPost, originalUser, originalTime, quote }) {
   if (typePost == 1)
@@ -26,7 +18,7 @@ function UserPost({ typePost, originalPost, originalUser, originalTime, quote })
 
           <div className="_fz12 _mtxxs">
             <div>Originally posted by <span className="_cp">{originalUser}</span></div>
-            <DatePosted stringDate={originalTime} />
+            <DateFormated stringDate={originalTime} />
           </div>
         </div>
       </>
@@ -50,7 +42,7 @@ export default function Post(props) {
         </span>
         <div className="_mlxs">
           <span className="_mrxxs _fw7 _cp">{userName}</span>
-          <DatePosted stringDate={timePosted} className="_1/1 _db" />
+          <DateFormated stringDate={timePosted} className="_1/1 _db" />
         </div>
       </div>
       <div className="o-layout__item _taj">

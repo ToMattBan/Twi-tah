@@ -18,17 +18,17 @@
     - [x] Modal over HomePage
     - [x] Change URL
     - Data to Show
-      - [ ] Username (Alphanumeric 14char max)
-      - [ ] Date Joined (March 25, 2021)
-      - [ ] Number Followers
-      - [ ] Number Following
-      - [ ] Counting Posts (Including Repost and Quotes)
-      - [ ] Show feed with user posts (Repost and Quotes too)
+      - [x] Username (Alphanumeric 14char max)
+      - [x] Date Joined (March 25, 2021)
+      - [X] Number Followers
+      - [x] Number Following
+      - [x] Counting Posts (Including Repost and Quotes)
+      - [x] Show feed with user posts (Repost and Quotes too)
   - Mine
     - [ ] New Post
   - Others
-    - [ ] Show if you are following the user
-    - [ ] Give the option to follow/unfollow
+    - [x] Show if you are following the user
+    - [x] Give the option to follow/unfollow
 - Posts
   - [ ] User can just post 5 a day
   - [ ] Text only

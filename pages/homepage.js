@@ -77,9 +77,9 @@ export default function Home() {
 
         <article>
           {
-            posts.map(post => {
+            posts.map((post, index) => {
               return (
-                <Post post={post} key={post} />
+                <Post post={post} key={post + index} />
               )
             })
           }
@@ -87,7 +87,7 @@ export default function Home() {
       </main>
 
       <Modal isOpen={!!router.query.userId} onRequestClose={() => router.push('/homepage')}>
-        <User userId={router.query.userId} />
+        <User userId={router.query.userId} isModal={true} />
       </Modal>
     </div>
   )
