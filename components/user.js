@@ -2,6 +2,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react/cjs/react.development";
 import DateFormated from "./dateFormated";
 import Post from "./posts";
+import NewPostBox from "./NewPostBox";
 
 import profilePlaceholder from "../public/favicon.ico"
 
@@ -10,9 +11,14 @@ export default function User({ userId, isModal }) {
   const [profilePic, setProfilePic] = useState(profilePlaceholder);
   const [posts, setPosts] = useState([]);
   const [isFollowing, setIsFollowing] = useState(false);
+  const [isProfile, setIsProfile] = useState(false);
+
+  /* Normally we already have this info, but this is not the focus here, so I will hard code */
+  var userLoggedId = 1234567890
 
   useEffect(() => {
     if (!userId) userId = window.location.pathname.match(/\d.*/g)[0];
+    if (userLoggedId == userId) setIsProfile(true);
 
     fetch("/api/users/" + userId)
       .then((res) => res.json())
@@ -26,6 +32,10 @@ export default function User({ userId, isModal }) {
 
   function toggleFollow() {
     setIsFollowing(isFollowing ? false : true)
+  }  
+
+  function newPost(post) {
+    setPosts([post, ...posts]);
   }
 
   return (
@@ -37,9 +47,11 @@ export default function User({ userId, isModal }) {
         <section className="o-layout__item _9/12 _tac">
           <div className="_df _jcsa _aic">
             <span className="_fw7">{userInfo.userName}</span>
-            <button onClick={toggleFollow} className="c-btn--primary c-btn--inverted _bd0 _bdrs4 _fz14 _phxs" style={{ paddingTop: '3px', paddingBottom: "3px" }}>
-              {isFollowing ? "Following" : "Follow"}
-            </button>
+            {isProfile ? <></> :
+              <button onClick={toggleFollow} className="c-btn--primary c-btn--inverted _bd0 _bdrs4 _fz14 _phxs" style={{ paddingTop: '3px', paddingBottom: "3px" }}>
+                {isFollowing ? "Following" : "Follow"}
+              </button>
+            }
           </div>
           <div className="_fz12 _mtxxs">
             <span>In Posterr since </span>
@@ -48,7 +60,7 @@ export default function User({ userId, isModal }) {
         </section>
       </article>
 
-      <article className="_df _jcsb _tac">
+      <article className="_df _jcsb _tac _mb">
         <section>
           <div>Followers</div>
           <div>{userInfo.numFollowers}</div>
@@ -63,7 +75,11 @@ export default function User({ userId, isModal }) {
         </section>
       </article>
 
-      <article className="_mtxl">
+      <article>
+        <NewPostBox onNewPost={newPost} />
+      </article>
+
+      <article>
         {
           posts.map((post, index) => {
             return (

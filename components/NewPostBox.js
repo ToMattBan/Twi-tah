@@ -31,6 +31,7 @@ export default function NewPostBox({onNewPost}) {
     }
 
     onNewPost(newPost);
+    setPostContent('');
   }
 
   return (
@@ -45,6 +46,7 @@ export default function NewPostBox({onNewPost}) {
             height: '55px',
             overflowY: 'hidden'
           }}
+          value={postContent}
           onInput={resizeTextbox}
         />
       </div>

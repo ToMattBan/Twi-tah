@@ -1,11 +1,33 @@
 export default async (req, res) => {
-  console.log(req.query);
   const { id } = req.query;
   var userData = '';
-  console.log(id)
+
+  if (id == '1234567890') {
+    userData = {
+      userName: "Strider Dev",
+      profilePic: "https://randomuser.me/api/portraits/women/35.jpg",
+      dateJoined: new Date('March 12, 2022'),
+      areFollowing: true,
+      numFollowers: 0,
+      numFollowing: 3,
+      numPosts: 1,
+      posts: [
+        {
+          userName: "Strider Dev",
+          profilePic: "https://randomuser.me/api/portraits/women/35.jpg",
+          userId: 1234567890,
+          timePosted: new Date('March 15, 2022'),
+          typePost: "1",
+          originalPost: "My first post on posterr",
+          originalUser: null,
+          originalTime: null,
+          quote: null,
+        },
+      ]
+    }
+  }
 
   if (id == '4186453486') {
-    console.log('4186453486')
     userData = {
       userName: "Tauranga",
       profilePic: "https://randomuser.me/api/portraits/women/18.jpg",
@@ -119,7 +141,6 @@ export default async (req, res) => {
   }
 
   if (id == '1672746848') {
-    console.log('1672746848')
     userData = {
       userName: "Gabin",
       profilePic: "https://randomuser.me/api/portraits/men/13.jpg",
@@ -200,7 +221,6 @@ export default async (req, res) => {
   }
 
   if (id == '8464268426') {
-    console.log('8464268426')
     userData = {
       userName: "King Dunedin",
       profilePic: "https://randomuser.me/api/portraits/men/6.jpg",
