@@ -29,7 +29,7 @@
     - [x] Show if you are following the user
     - [x] Give the option to follow/unfollow
 - Posts
-  - [ ] User can just post 5 a day
+  - [x] User can just post 5 a day
   - [x] Text only
   - [x] 777 char max
   - [x] Show how many chars are left

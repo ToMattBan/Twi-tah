@@ -1,9 +1,12 @@
-import { useEffect, useState } from "react/cjs/react.development";
+import { useState } from "react/cjs/react.development";
+import { useCookies } from "react-cookie";
 
-export default function NewPostBox({onNewPost}) {
+export default function NewPostBox({ onNewPost }) {
+  const [cookies, setCookie] = useCookies(["today-posts"]);
   const maxLength = 777;
   const [charsLeft, setCharsLeft] = useState(maxLength);
   const [postContent, setPostContent] = useState('');
+  const [error, setError] = useState(false);
 
   function resizeTextbox(e) {
     var that = e.target;
@@ -18,6 +21,11 @@ export default function NewPostBox({onNewPost}) {
   function addPost(e) {
     e.preventDefault();
 
+    if (cookies["today-posts"] >= 5) {
+      setError(true);
+      return;
+    }
+
     var newPost = {
       userName: "Strider Dev",
       profilePic: "https://randomuser.me/api/portraits/women/35.jpg",
@@ -29,6 +37,22 @@ export default function NewPostBox({onNewPost}) {
       originalTime: null,
       quote: null,
     }
+    
+    /* 
+      The correct way is using the filter option of database, 
+      but how I don't have one, I will use cookies 
+    */
+
+    var tomorrow = new Date();
+        tomorrow.setDate(tomorrow.getDate() + 1)
+
+    setCookie("today-posts", 
+      cookies["today-posts"] ? parseInt(cookies["today-posts"]) + 1 : 1, 
+      {
+        path: "/",
+        expires: tomorrow
+      }
+    );
 
     onNewPost(newPost);
     setPostContent('');
@@ -49,11 +73,16 @@ export default function NewPostBox({onNewPost}) {
           value={postContent}
           onInput={resizeTextbox}
         />
+        {
+          error ? (
+            <div className="_fz12 _red" style={{marginTop: '-2px'}}>You posted too many times today, please wait until tomorrow</div>
+           ) : ''
+        }
       </div>
       <div className="o-layout _mtxxs">
         <div className="o-layout__item _6/12">
           <button
-            className="c-btn--primary c-btn--inverted _bd0 _bdrs4 _fz14 _phxs" 
+            className="c-btn--primary c-btn--inverted _bd0 _bdrs4 _fz14 _phxs"
             style={{ paddingTop: '3px', paddingBottom: "3px" }}
             type="submit"
           > Post </button>
