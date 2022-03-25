@@ -11,7 +11,7 @@
     - [x] New Post
     - [x] List posts
     - [x] List quotes and reposts
-    - [ ] Quote, Repost
+    - [x] Quote, Repost
 - ProfilePage
   - All of them
     - [x] Modal over HomePage
