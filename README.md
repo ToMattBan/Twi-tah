@@ -85,7 +85,7 @@
   - 
   - This was made assuming the daily limit has not been increased and the backend update the info showing the correct number of posts
 
-## Critique]
+## Critique
 - Improovments
   - Would adapt the project to reach the desktop users too;
   - Would do a better job with the colors and with the styles in general;
@@ -97,3 +97,7 @@
   - The platform probably will be taken down because the great number of  simultaneous accesses
   - Would need to use a good database to store all the data and to be fast when some data are asked for
   - A lazy load would be necessary, maybe each 30 posts.
+  - The chat option and comments would be nice to users interact with each other.
+  - An option to block and report users would be necessary.
+  - A tag system to separate the content by matter.
+  - Would need to veridy offical accounts of famous people and public figures, enterprises and government too.
