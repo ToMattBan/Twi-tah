@@ -7,7 +7,6 @@
     - [x] See Following Posts
     - [x] Change in URL
     - [x] Change in the page
-    - [ ] Save on localHost the option
   - Feed
     - [x] New Post
     - [x] List posts
@@ -25,7 +24,7 @@
       - [x] Counting Posts (Including Repost and Quotes)
       - [x] Show feed with user posts (Repost and Quotes too)
   - Mine
-    - [ ] New Post
+    - [x] New Post
   - Others
     - [x] Show if you are following the user
     - [x] Give the option to follow/unfollow
