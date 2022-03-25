@@ -2,7 +2,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react/cjs/react.development";
 import DateFormated from "./dateFormated";
 import Post from "./posts";
-import NewPostBox from "./NewPostBox";
+import NewPostBox from "./newPostBox";
 
 import profilePlaceholder from "../public/favicon.ico"
 
@@ -32,7 +32,7 @@ export default function User({ userId, isModal }) {
 
   function toggleFollow() {
     setIsFollowing(isFollowing ? false : true)
-  }  
+  }
 
   function newPost(post) {
     setPosts([post, ...posts]);

@@ -3,7 +3,7 @@ import { useRouter } from "next/router"
 import Modal from "react-modal";
 import { useEffect, useState } from "react/cjs/react.development"
 import Header from "../components/header";
-import NewPostBox from "../components/NewPostBox";
+import NewPostBox from "../components/newPostBox";
 import Post from "../components/posts"
 import User from "../components/user";
 

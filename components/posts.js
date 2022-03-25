@@ -1,10 +1,7 @@
 import Image from "next/image"
 import Link from "next/link";
-import { useRouter } from "next/router";
-
-import repostIcon from "../public/repost.svg"
-import quoteIcon from "../public/quote.svg"
 import DateFormated from "./dateFormated";
+import ReactionBox from "./reactionBox";
 
 function UserPost({ typePost, originalPost, originalUser, originalTime, quote }) {
   if (typePost == 1)
@@ -27,7 +24,6 @@ function UserPost({ typePost, originalPost, originalUser, originalTime, quote })
 }
 
 export default function Post(props) {
-  const router = useRouter();
   const { userName, profilePic, userId, timePosted, typePost, originalPost, originalUser, originalTime, quote } = props.post;
 
   return (
@@ -49,10 +45,7 @@ export default function Post(props) {
         <UserPost typePost={typePost} originalPost={originalPost}
           originalUser={originalUser} originalTime={originalTime} quote={quote} />
       </div>
-      <div className="o-layout__item _df _jcsa _mtxs">
-        <Image src={repostIcon} width="100%" className="_cp" />
-        <Image src={quoteIcon} width="100%" className="_cp" />
-      </div>
+      <ReactionBox originalPost={originalPost} originalUser={originalUser} originalTime={originalTime} />
     </section>
   )
 }
