@@ -51,4 +51,37 @@
 - Users data from [RandomUser](randomuser.me)
 
 ## Coments
-- On the homepage I tryied to use SWR, but the data take too long to be received, So I changed it and used a simple fetch instead.
+- On the homepage I tried to use SWR, but the data take too long to be received, So I changed it and used a simple fetch instead.
+- I don't use twitter, so some concepts are really strange for me. The repply was really hard to understand
+
+## Plannig
+- Questions
+  - The replies will count on the daily limit of posts?
+  - The limit will be increased?
+  - The user will be able to reply to posts of people he don't follow?
+  - The user will be able to reply to posts of people who don't follow him?
+  - How will we call the first section of the user page, where we will show the quotes and reposts?
+  - On the profile, the first tab will show posts, quotes, and reposts or just quotes and reposts since the replies will be shown with the replies on the "Post and Replies" tab?
+  - Replies will count on the number of posts showed on the profile?
+- Planning
+  - Using the function who detects the length of the post, detect if a new post has a "@".
+  - If found, change the postType flag to "4", because 1, 2 and 3 is already in use.
+  - Using the number 4, the backend will understand that is a reply.
+  - Also, will send to back-end what is mentioned using the @.
+  - Now the back-end can return this info to front-end, so the next step is update the post component.
+  - If a post is of type "4", the front would show what is preceded by the @ in bold to differentiate.
+  - Now it's time to update the userpage
+  - Ask for the backend two different endpoints, one which will show quotes and reposts (Q&R) and another to the original content (OC).
+  - First, we will need to create the two tabs statically, one from Q&R and another from OC.
+  - Applying the CSS estilize following the project scheme.
+  - Start with the JS, create a function to handle the tab change, passing the tab name as params.
+  - The JS function will change the 'active' class from one tab to another one.
+  - Create two separate divs, one to accommodate the Q&R, and another one to accommodate the posts and replies.
+  - The first div will be loaded with the page, and the second one just when the user change the tab.
+  - Update the default function to get the posts data according to the tab the user chooses.
+  - Update the map function on the original div for Q&R and create another on the new div for the OC.
+  - Done!
+  - 
+  - This was made assuming the daily limit has not been increased and the backend update the info showing the correct number of posts
+
+## Critique
