@@ -53,6 +53,7 @@
 ## Coments
 - On the homepage I tried to use SWR, but the data take too long to be received, So I changed it and used a simple fetch instead.
 - I don't use twitter, so some concepts are really strange for me. The repply was really hard to understand
+- The project has been coordinated with the idea, which users will use the project on mobile, so everything has been planned to run better on a phone. You can test it "simulating" a phone using the developer tools of the browser
 
 ## Plannig
 - Questions
@@ -84,4 +85,15 @@
   - 
   - This was made assuming the daily limit has not been increased and the backend update the info showing the correct number of posts
 
-## Critique
+## Critique]
+- Improovments
+  - Would adapt the project to reach the desktop users too;
+  - Would do a better job with the colors and with the styles in general;
+  - Would sync the posts created on userpage and homepage with each other;
+  - Would improove UI/UX by seraching about and seeing more references than just Twitter.
+  - Would make a better way to check the diary post limit
+- Scaling
+  - The first part to fail would be the daily limit. The users would give up the platform because of this.
+  - The platform probably will be taken down because the great number of  simultaneous accesses
+  - Would need to use a good database to store all the data and to be fast when some data are asked for
+  - A lazy load would be necessary, maybe each 30 posts.
