@@ -84,7 +84,7 @@ export default function Home() {
           {
             posts.map((post, index) => {
               return (
-                <Post post={post} key={post + index} />
+                <Post post={post} key={post + index} onNewPost={newPost} />
               )
             })
           }

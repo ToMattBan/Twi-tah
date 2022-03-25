@@ -19,6 +19,7 @@ export default function User({ userId, isModal }) {
   useEffect(() => {
     if (!userId) userId = window.location.pathname.match(/\d.*/g)[0];
     if (userLoggedId == userId) setIsProfile(true);
+    console.log(isProfile)
 
     fetch("/api/users/" + userId)
       .then((res) => res.json())
@@ -35,7 +36,8 @@ export default function User({ userId, isModal }) {
   }
 
   function newPost(post) {
-    setPosts([post, ...posts]);
+    if (isProfile)
+      setPosts([post, ...posts]);
   }
 
   return (
@@ -75,15 +77,18 @@ export default function User({ userId, isModal }) {
         </section>
       </article>
 
-      <article>
-        <NewPostBox onNewPost={newPost} />
-      </article>
+      {isProfile ? 
+        <article>
+          <NewPostBox onNewPost={newPost} />
+        </article>
+        : <></>
+      }
 
       <article>
         {
           posts.map((post, index) => {
             return (
-              <Post post={post} key={post + index} />
+              <Post post={post} key={post + index} onNewPost={newPost} />
             )
           })
         }

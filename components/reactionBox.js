@@ -14,14 +14,13 @@ const modalStyle = {
 }
 Modal.setAppElement('#__next');
 
-export default function ReactionBox({ originalPost, originalUser, originalTime }) {
+export default function ReactionBox({ originalPost, originalUser, originalTime, onNewReaction }) {
   const [cookies, setCookie] = useCookies(["today-posts"]);
   const [modalOpen, setModalOpen] = useState(false);
   const [postType, setPostType] = useState("2");
   const [error, setError] = useState(false);
   
   const maxLength = 777;
-  const [charsLeft, setCharsLeft] = useState(maxLength);
   const [quote, setQuote] = useState('');
 
 
@@ -31,7 +30,6 @@ export default function ReactionBox({ originalPost, originalUser, originalTime }
     that.style.height = "auto";
     that.style.height = (that.scrollHeight) + "px";
 
-    setCharsLeft(maxLength - that.value.length);
     setQuote(that.value);
   }
 
@@ -80,8 +78,7 @@ export default function ReactionBox({ originalPost, originalUser, originalTime }
       }
     );
     
-    console.log(newPost)
-    //onNewReaction(newPost);
+    onNewReaction(newPost);
     setQuote('');
   }
 

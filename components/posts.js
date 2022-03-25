@@ -23,8 +23,12 @@ function UserPost({ typePost, originalPost, originalUser, originalTime, quote })
   }
 }
 
-export default function Post(props) {
-  const { userName, profilePic, userId, timePosted, typePost, originalPost, originalUser, originalTime, quote } = props.post;
+export default function Post({post, onNewPost}) {
+  const { userName, profilePic, userId, timePosted, typePost, originalPost, originalUser, originalTime, quote } = post;
+
+  function newReaction(newPost) {
+    onNewPost(newPost);
+  }
 
   return (
     <section className="post o-layout _m0 _fz14 _mvxs _pvxs _bdlightGray _bdrs4">
@@ -45,7 +49,7 @@ export default function Post(props) {
         <UserPost typePost={typePost} originalPost={originalPost}
           originalUser={originalUser} originalTime={originalTime} quote={quote} />
       </div>
-      <ReactionBox originalPost={originalPost} originalUser={originalUser} originalTime={originalTime} />
+      <ReactionBox originalPost={originalPost} originalUser={originalUser} originalTime={originalTime} onNewReaction={newReaction}/>
     </section>
   )
 }
