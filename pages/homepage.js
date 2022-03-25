@@ -14,10 +14,10 @@ export default function Home() {
 
   const [posts, setPosts] = useState([])
   const [typeFilter, setFilter] = useState('all');
-  var filterParam = 'all'
   var urlPosts = "api/feed/"
-
+  
   useEffect(() => {
+    var filterParam = 'all'
     filterParam = new URLSearchParams(window.location.search).get('posts');
     setFilter(filterParam);
 
@@ -38,9 +38,7 @@ export default function Home() {
     var isChecked = e.target.checked;
     var newFilter = isChecked ? 'following' : 'all';
 
-
-    filterParam = newFilter;
-    setFilter(filterParam);
+    setFilter(newFilter);
 
     router.push({ query: { posts: filterParam } }, undefined, { shallow: true })
 

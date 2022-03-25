@@ -84,8 +84,8 @@ export default function ReactionBox({ originalPost, originalUser, originalTime, 
 
   return (
     <div className="o-layout__item _df _jcsa _mtxs">
-      <Image src={repostIcon} width="100%" className="_cp" onClick={() => openConfirmModal('repost')} />
-      <Image src={quoteIcon} width="100%" className="_cp" onClick={() => openConfirmModal('quote')} />
+      <Image src={repostIcon} width="100%" className="_cp" onClick={() => openConfirmModal('repost')} alt="repostIcon"/>
+      <Image src={quoteIcon} width="100%" className="_cp" onClick={() => openConfirmModal('quote')} alt="quoteIcon"/>
 
       <Modal isOpen={modalOpen} onRequestClose={() => { setModalOpen(false) }} style={modalStyle}>
         {

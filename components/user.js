@@ -19,7 +19,6 @@ export default function User({ userId, isModal }) {
   useEffect(() => {
     if (!userId) userId = window.location.pathname.match(/\d.*/g)[0];
     if (userLoggedId == userId) setIsProfile(true);
-    console.log(isProfile)
 
     fetch("/api/users/" + userId)
       .then((res) => res.json())
@@ -44,7 +43,7 @@ export default function User({ userId, isModal }) {
     <main className={isModal ? "" : "o-wrapper _mtxs"}>
       <article className="o-layout o-layout--xxs _df _aic">
         <section className="o-layout__item _3/12">
-          <Image className="_bdrs50p _cp" src={profilePic} width="100%" height="100%" />
+          <Image className="_bdrs50p _cp" src={profilePic} width="100%" height="100%" alt="profilePic" />
         </section>
         <section className="o-layout__item _9/12 _tac">
           <div className="_df _jcsa _aic">

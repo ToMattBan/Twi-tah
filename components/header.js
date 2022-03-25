@@ -11,7 +11,7 @@ export default function Header() {
       </Link>
       <Link href={`/homepage/?userId=${userId}`} as={`/userpage/${userId}`}>
         <a>
-          <Image className="_bdrs50p _cp" src="https://randomuser.me/api/portraits/women/35.jpg" width="50%" height="50%" />
+          <Image className="_bdrs50p _cp" src="https://randomuser.me/api/portraits/women/35.jpg" width="50%" height="50%" alt="user avatar"/>
         </a>
       </Link>
     </header>
