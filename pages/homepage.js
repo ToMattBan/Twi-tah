@@ -1,7 +1,7 @@
 import Head from "next/head"
 import { useRouter } from "next/router"
 import Modal from "react-modal";
-import { useEffect, useState } from "react/cjs/react.development"
+import { useEffect, useState } from "react"
 import Header from "../components/header";
 import NewPostBox from "../components/newPostBox";
 import Post from "../components/posts"
@@ -56,7 +56,7 @@ export default function Home() {
   return (
     <div>
       <Head>
-        <title>Twi'tah</title>
+        <title>Twi&apos;tah</title>
         <meta name="description" content="Like Twi'tah but" />
         <link rel="icon" href="/favicon.ico" />
       </Head>

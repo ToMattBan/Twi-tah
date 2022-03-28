@@ -1,4 +1,4 @@
-import { useState } from "react/cjs/react.development";
+import { useState } from "react";
 import { useCookies } from "react-cookie";
 
 export default function NewPostBox({ onNewPost }) {

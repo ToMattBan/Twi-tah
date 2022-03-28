@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { useEffect, useState } from "react/cjs/react.development";
+import { useEffect, useState } from "react";
 import DateFormated from "./dateFormated";
 import Post from "./posts";
 import NewPostBox from "./newPostBox";
@@ -55,7 +55,7 @@ export default function User({ userId, isModal }) {
             }
           </div>
           <div className="_fz12 _mtxxs">
-            <span>In Twi'tah since </span>
+            <span>In Twi&apos;tah since </span>
             <DateFormated stringDate={userInfo.dateJoined} />
           </div>
         </section>
