@@ -1,4 +1,4 @@
-# Cleyton Andre Lazzarini
+# Twi'tah
 
 ## RoadMap
 - HomePage
@@ -38,7 +38,7 @@
 
 ## How to run
 - Install the dependencies with `npm install`
-- Run with `npm run dev`
+- Run with `npm run start`
 - Open [http://localhost:3000](http://localhost:3000) 
 
 ## How filter
@@ -50,6 +50,7 @@
 - Icons from [SVGRepo](www.svgrepo.com/vectors)
 - Users data from [RandomUser](randomuser.me)
 
+<!--
 ## Coments
 - On the homepage I tried to use SWR, but the data take too long to be received, So I changed it and used a simple fetch instead.
 - I don't use twitter, so some concepts are really strange for me. The repply was really hard to understand
@@ -101,3 +102,4 @@
   - An option to block and report users would be necessary.
   - A tag system to separate the content by matter.
   - Would need to veridy offical accounts of famous people and public figures, enterprises and government too.
+-->

@@ -55,7 +55,7 @@ export default function User({ userId, isModal }) {
             }
           </div>
           <div className="_fz12 _mtxxs">
-            <span>In Posterr since </span>
+            <span>In Twi'tah since </span>
             <DateFormated stringDate={userInfo.dateJoined} />
           </div>
         </section>

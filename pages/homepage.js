@@ -56,7 +56,7 @@ export default function Home() {
   return (
     <div>
       <Head>
-        <title>Posterr</title>
+        <title>Twi'tah</title>
         <meta name="description" content="Like Twi'tah but" />
         <link rel="icon" href="/favicon.ico" />
       </Head>

@@ -91,7 +91,7 @@ export default function ReactionBox({ originalPost, originalUser, originalTime, 
         {
           postType == '2' ? (
             <div className="_tac">
-              <span className="_fz20">Repost that Posterr?</span>
+              <span className="_fz20">Repost that Twi'tah?</span>
               <div className="_df _jcsa _mtsm">
                 <button
                   className="c-btn--primary c-btn--inverted _bd0 _bdrs4 _fz14 _phxs"
@@ -110,7 +110,7 @@ export default function ReactionBox({ originalPost, originalUser, originalTime, 
             </div>
           ) : (
             <div className="_tac">
-              <span className="_fz20">Quote that Posterr?</span>
+              <span className="_fz20">Quote that Twi'tah?</span>
 
               <textarea
                 type="text"

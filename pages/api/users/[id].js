@@ -18,7 +18,7 @@ export default async (req, res) => {
           userId: 1234567890,
           timePosted: new Date('March 15, 2022'),
           typePost: "1",
-          originalPost: "My first post on posterr",
+          originalPost: "My first post on twi'tah",
           originalUser: null,
           originalTime: null,
           quote: null,

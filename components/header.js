@@ -5,9 +5,9 @@ export default function Header() {
   var userId = 1234567890;
 
   return (
-    <header className="posterrHeader _pot _t0 _bgsecondary _pxs _df _jcsb _z1 _aic _elevation16">
+    <header className="twitahHeader _pot _t0 _bgsecondary _pxs _df _jcsb _z1 _aic _elevation16">
       <Link href={`/homepage?posts=all`}>
-        <a className="_tdn"> <div className="_fw7 _fz20 _white">Posterr</div> </a>
+        <a className="_tdn"> <div className="_fw7 _fz20 _white">Thi'tah</div> </a>
       </Link>
       <Link href={`/homepage/?userId=${userId}`} as={`/userpage/${userId}`}>
         <a>
