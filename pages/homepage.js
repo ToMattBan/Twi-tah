@@ -39,10 +39,9 @@ export default function Home() {
     var newFilter = isChecked ? 'following' : 'all';
 
     setFilter(newFilter);
+    router.push({ query: { posts: newFilter } }, undefined, { shallow: true })
 
-    router.push({ query: { posts: filterParam } }, undefined, { shallow: true })
-
-    fetch(urlPosts + filterParam)
+    fetch(urlPosts + newFilter)
       .then((res) => res.json())
       .then((posts) => {
         setPosts(posts)
